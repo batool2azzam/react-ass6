@@ -1,26 +1,12 @@
-import { useState } from "react";
-import List from "./components/List.js";
-import { ImageSizeContext } from './components/MyContext.js';
+import React from 'react';
+import AccordionComponent from './AccordionComponent';
 
-export default function App() {
-  const [isLarge, setIsLarge] = useState(false);
-  const imageSize = isLarge ? 150 : 100;
+function App() {
   return (
-    <ImageSizeContext.Provider
-      value={imageSize}
-    >
-      <label>
-        <input
-          type="checkbox"
-          checked={isLarge}
-          onChange={e => {
-            setIsLarge(e.target.checked);
-          }}
-        />
-        Use large images
-      </label>
-      <hr />
-      <List />
-    </ImageSizeContext.Provider>
-  )
+    <div className="App">
+      <AccordionComponent />
+    </div>
+  );
 }
+
+export default App;
